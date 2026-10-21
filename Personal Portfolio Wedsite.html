@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        /* Basic styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: #263b80;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background: #172554;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        section {
+            background: white;
+            margin: 20px auto;
+            padding: 25px;
+            width: 85%;
+            max-width: 900px;
+            border-radius: 10px;
+            animation: appear 1s ease;
+        }
+
+        h2 {
+            color: #263b80;
+        }
+
+        /* Simple animation */
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        button {
+            background: #263b80;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5068c7;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Mobile-friendly design */
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+
+            section {
+                width: 85%;
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="home">
+        <h1>My Personal Portfolio</h1>
+        <p>Welcome to my website!</p>
+    </header>
+
+    <nav>
+        <a href="#profile">Profile</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="profile">
+        <h2>My Profile</h2>
+        <p><b>Name:</b> Your Name</p>
+        <p><b>Course:</b> B.Tech CSE</p>
+        <p>I am a student interested in programming and technology.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education Qualification</h2>
+        <p>B.Tech CSE - Your College Name</p>
+        <p>Intermediate - Your College Name</p>
+        <p>School - Your School Name</p>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+        </ul>
+    </section>
+
+    <section id="hobbies">
+        <h2>My Hobbies</h2>
+        <ul>
+            <li>Reading books</li>
+            <li>Learning new technologies</li>
+            <li>Coding</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <p>1. Personal Portfolio Website</p>
+        <p>2. Student Startup Website</p>
+    </section>
+
+    <section id="achievements">
+        <h2>My Achievements</h2>
+        <p>Add your certificates, awards, and competition achievements here.</p>
+    </section>
+
+    <section id="resume">
+        <h2>My Resume</h2>
+        <p>Click below to view my resume.</p>
+        <a href="resume.pdf" target="_blank">View Resume PDF</a>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <p>Email: yourname@example.com</p>
+        <p>Location: Your City</p>
+        <button onclick="showMessage()">Click Me</button>
+        <p id="message"></p>
+    </section>
+
+    <footer>
+        <p>© 2026 My Personal Portfolio</p>
+    </footer>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerHTML =
+                "Thank you for visiting my portfolio!";
+        }
+    </script>
+
+</body>
+</html>
