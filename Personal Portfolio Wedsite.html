@@ -7,13 +7,11 @@
     <title>My Portfolio</title>
 
     <style>
-        /* Basic styling */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background: #f0f4f8;
             color: #333;
-            scroll-behavior: smooth;
         }
 
         header {
@@ -47,36 +45,10 @@
             width: 85%;
             max-width: 900px;
             border-radius: 10px;
-            animation: appear 1s ease;
         }
 
         h2 {
             color: #263b80;
-        }
-
-        /* Simple animation */
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        button {
-            background: #263b80;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #5068c7;
         }
 
         footer {
@@ -86,7 +58,6 @@
             padding: 15px;
         }
 
-        /* Mobile-friendly design */
         @media (max-width: 600px) {
             nav a {
                 display: block;
@@ -121,16 +92,16 @@
 
     <section id="profile">
         <h2>My Profile</h2>
-        <p><b>Name:</b> Your Name</p>
-        <p><b>Course:</b> B.Tech CSE</p>
+        <p><b>Name:</b> Tatti Jayaram</p>
+        <p><b>Course:</b> B.Tech CSM</p>
         <p>I am a student interested in programming and technology.</p>
     </section>
 
     <section id="education">
         <h2>Education Qualification</h2>
-        <p>B.Tech CSE - Your College Name</p>
-        <p>Intermediate - Your College Name</p>
-        <p>School - Your School Name</p>
+        <p>B.Tech CSM - Dr. RVR NRI Deemed to be University</p>
+        <p>Intermediate - Narayana Junior College</p>
+        <p>School - Bhashyam School</p>
     </section>
 
     <section id="skills">
@@ -171,22 +142,13 @@
 
     <section id="contact">
         <h2>Contact Information</h2>
-        <p>Email: yourname@example.com</p>
-        <p>Location: Your City</p>
-        <button onclick="showMessage()">Click Me</button>
-        <p id="message"></p>
+        <p>Email: jayaram.tatti2468@gmail.com</p>
+        <p>Location: Vijayawada, Andhra Pradesh</p>
     </section>
 
     <footer>
         <p>© 2026 My Personal Portfolio</p>
     </footer>
-
-    <script>
-        function showMessage() {
-            document.getElementById("message").innerHTML =
-                "Thank you for visiting my portfolio!";
-        }
-    </script>
 
 </body>
 </html>
