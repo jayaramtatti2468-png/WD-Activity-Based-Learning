@@ -1,414 +1,396 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Moon Light Restaurant and Cafe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Light Restaurant and Cafe</title>
 
-  <style>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    * {
-      box-sizing: border-box;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fdfdfd;
+            color: #333333;
+        }
+        #navbar {
+            background-color: #2f4f2f;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid lightblue;
+        }
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial;
-      background-color: #fdfdfd;
-      color: #333333;
-    }
+        #navbar .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-    /* ---------- NAVIGATION BAR ---------- */
+        #navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-    #navbar {
-      background-color: #2f4f2f;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 4px solid #a3c644;
-    }
+        #navbar ul > li {
+            display: inline-block;
+            margin-left: 25px;
+        }
 
-    #navbar .logo {
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-    }
+        #navbar ul > li > a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            padding: 5px 8px;
+            border-bottom: 2px solid transparent;
+        }
 
-    #navbar ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+        #navbar ul > li > a:hover {
+            border-bottom: 2px solid #a3c644;
+            color: #a3c644;
+        }
+        .hero {
+            background-color:lightblue;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 5px solid #2f4f2f;
+        }
 
-    #navbar ul > li {
-      display: inline-block;
-      margin-left: 25px;
-    }
+        .hero h1 {
+            color: #2f4f2f;
+            font-size: 42px;
+            margin: 0;
+        }
 
-    #navbar ul > li > a {
-      color: white;
-      text-decoration: none;
-      font-size: 17px;
-      padding: 5px 8px;
-      border-bottom: 2px solid transparent;
-    }
+        .hero p {
+            color: #333333;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .about {
+            padding: 40px 30px;
+            text-align: center;
+        }
 
-    #navbar ul > li > a:hover {
-      border-bottom: 2px solid #a3c644;
-      color: #a3c644;
-    }
+        .about h2,
+        .menu h2,
+        .gallery h2,
+        .contact h2 {
+            color: #2f4f2f;
+            border-bottom: 2px solid #a3c644;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
 
-    /* ---------- HERO / HEADER SECTION ---------- */
+        .about p {
+            max-width: 700px;
+            margin: 15px auto 0;
+            line-height: 1.6;
+        }
+        .menu {
+            background-color: #f4f4e8;
+            padding: 40px 30px;
+            text-align: center;
+        }
 
-    .hero {
-      background-color: #a3c644;
-      text-align: center;
-      padding: 60px 20px;
-      border-bottom: 5px solid #2f4f2f;
-    }
+        .menu-card {
+            background-color: white;
+            display: inline-block;
+            width: 200px;
+            margin: 15px;
+            padding: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+        }
 
-    .hero h1 {
-      color: #2f4f2f;
-      font-size: 42px;
-      margin: 0;
-    }
+        .menu-card:hover {
+            border: 1px solid #a3c644;
+        }
 
-    .hero p {
-      color: #333333;
-      font-size: 18px;
-      margin-top: 10px;
-    }
+        .menu-card h3 {
+            color: #2f4f2f;
+            margin: 0 0 10px;
+        }
 
-    /* ---------- ABOUT SECTION ---------- */
+        .menu-card p {
+            margin: 0;
+            color: #555555;
+        }
 
-    .about {
-      padding: 40px 30px;
-      text-align: center;
-    }
+        .menu-card .price {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #789b20;
+        }
+        .gallery {
+            padding: 40px 30px;
+            text-align: center;
+        }
 
-    .about h2 {
-      color: #2f4f2f;
-      border-bottom: 2px solid #a3c644;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
+        .gallery-box {
+            display: inline-block;
+            width: 180px;
+            height: 120px;
+            background-color: #dddddd;
+            margin: 10px;
+            border: 2px solid #cccccc;
+        }
+        .reservation {
+            background-color: #2f4f2f;
+            padding: 40px 30px;
+            text-align: center;
+        }
 
-    .about p {
-      max-width: 700px;
-      margin: 15px auto 0 auto;
-      line-height: 1.6;
-    }
+        .reservation h2 {
+            color: white;
+            border-bottom: 2px solid #a3c644;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
 
-    /* ---------- MENU SECTION (BOX MODEL DEMO) ---------- */
+        #reservation-form {
+            max-width: 500px;
+            margin: 20px auto 0;
+            background-color: white;
+            padding: 25px;
+            border-radius: 6px;
+            text-align: left;
+        }
 
-    .menu {
-      background-color: #f4f4e8;
-      padding: 40px 30px;
-      text-align: center;
-    }
+        #reservation-form > div {
+            margin-bottom: 15px;
+        }
 
-    .menu h2 {
-      color: #2f4f2f;
-      border-bottom: 2px solid #a3c644;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
+        #reservation-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333333;
+            font-weight: bold;
+        }
 
-    .menu-card {
-      background-color: white;
-      display: inline-block;
-      width: 200px;
-      margin: 15px;
-      padding: 20px;
-      border: 1px solid #cccccc;
-      border-radius: 6px;
-    }
+        #reservation-form input,
+        #reservation-form select,
+        #reservation-form textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 15px;
+        }
 
-    .menu-card:hover {
-      border: 1px solid #a3c644;
-    }
+        #reservation-form input:focus,
+        #reservation-form select:focus,
+        #reservation-form textarea:focus {
+            border: 1px solid #a3c644;
+            outline: none;
+            background-color: #f4f4e8;
+        }
 
-    .menu-card h3 {
-      color: #2f4f2f;
-      margin: 0 0 10px 0;
-    }
+        #reservation-form .radio-group label {
+            display: inline-block;
+            font-weight: normal;
+            margin-right: 15px;
+        }
 
-    .menu-card p {
-      margin: 0;
-      color: #555555;
-    }
+        #reservation-form .radio-group input {
+            width: auto;
+        }
 
-    .menu-card .price {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #a3c644;
-    }
+        #reservation-form button {
+            background-color: #a3c644;
+            color: #2f4f2f;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    /* ---------- GALLERY SECTION ---------- */
+        #reservation-form button:hover {
+            background-color: #2f4f2f;
+            color: white;
+        }
+        .contact {
+            padding: 40px 30px;
+            text-align: center;
+        }
 
-    .gallery {
-      padding: 40px 30px;
-      text-align: center;
-    }
+        .contact p {
+            margin: 8px 0;
+        }
+        #footer {
+            background-color: #2f4f2f;
+            text-align: center;
+            padding: 15px;
+        }
 
-    .gallery h2 {
-      color: #2f4f2f;
-      border-bottom: 2px solid #a3c644;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
+        #footer p {
+            color: white;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            #navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
 
-    .gallery-box {
-      display: inline-block;
-      width: 180px;
-      height: 120px;
-      background-color: #dddddd;
-      margin: 10px;
-      border: 2px solid #cccccc;
-    }
+            #navbar ul {
+                text-align: center;
+            }
 
-    /* ---------- RESERVATION FORM SECTION ---------- */
+            #navbar ul > li {
+                margin: 5px;
+            }
 
-    .reservation {
-      background-color: #2f4f2f;
-      padding: 40px 30px;
-      text-align: center;
-    }
+            .hero h1 {
+                font-size: 30px;
+            }
 
-    .reservation h2 {
-      color: white;
-      border-bottom: 2px solid #a3c644;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    #reservation-form {
-      max-width: 500px;
-      margin: 20px auto 0 auto;
-      background-color: white;
-      padding: 25px;
-      border-radius: 6px;
-      text-align: left;
-    }
-
-    #reservation-form > div {
-      margin-bottom: 15px;
-    }
-
-    #reservation-form label {
-      display: block;
-      margin-bottom: 5px;
-      color: #333333;
-      font-weight: bold;
-    }
-
-    #reservation-form input,
-    #reservation-form select,
-    #reservation-form textarea {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #cccccc;
-      border-radius: 4px;
-      font-size: 15px;
-    }
-
-    #reservation-form input:focus,
-    #reservation-form select:focus,
-    #reservation-form textarea:focus {
-      border: 1px solid #a3c644;
-      outline: none;
-      background-color: #f4f4e8;
-    }
-
-    #reservation-form .radio-group label {
-      display: inline-block;
-      font-weight: normal;
-      margin-right: 15px;
-    }
-
-    #reservation-form button {
-      background-color: #a3c644;
-      color: #2f4f2f;
-      border: none;
-      padding: 12px 25px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-
-    #reservation-form button:hover {
-      background-color: #2f4f2f;
-      color: white;
-    }
-
-    /* ---------- CONTACT SECTION ---------- */
-
-    .contact {
-      padding: 40px 30px;
-      text-align: center;
-    }
-
-    .contact h2 {
-      color: #2f4f2f;
-      border-bottom: 2px solid #a3c644;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .contact p {
-      margin: 8px 0;
-    }
-
-    /* ---------- FOOTER ---------- */
-
-    #footer {
-      background-color: #2f4f2f;
-      text-align: center;
-      padding: 15px;
-    }
-
-    #footer p {
-      color: white;
-      margin: 0;
-    }
-
-  </style>
+            .menu-card {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <div id="navbar">
+        <div class="logo">Moon Light Restaurant and Cafe</div>
 
-  <!-- ================= NAVIGATION BAR ================= -->
-  <div id="navbar">
-    <div class="logo">Moon Light Restaurant and Cafe</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#reserve">Reserve</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-
-  <!-- ================= HERO SECTION ================= -->
-  <div class="hero">
-    <h1>Moon Light Restaurant and Cafe</h1>
-    <p>Fresh Food. Warm Ambience. Great Company.</p>
-  </div>
-
-  <!-- ================= ABOUT SECTION ================= -->
-  <div class="about" id="about">
-    <h2>About Us</h2>
-    <p>
-      Moon Light Restaurant and Cafehas been serving fresh, homely food since 2015.
-      We believe in simple ingredients, cozy seating, and a menu that
-      feels like home. Whether you are here for a quick coffee or a long
-      evening with friends, we have something for you.
-    </p>
-  </div>
-
-  <!-- ================= MENU SECTION ================= -->
-  <div class="menu" id="menu">
-    <h2>Our Menu</h2>
-    <br>
-
-    <div class="menu-card">
-      <h3>Veg Sandwich</h3>
-      <p>Grilled with fresh vegetables</p>
-      <div class="price">₹120</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reserve">Reserve</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </div>
-
-    <div class="menu-card">
-      <h3>Cold Coffee</h3>
-      <p>Rich and creamy, served chilled         </p>
-      <div class="price">₹90</div>
+    <div class="hero">
+        <h1>Moon Light Restaurant and Cafe</h1>
+        <p>Fresh Food. Warm Ambience. Great Company.</p>
     </div>
-
-    <div class="menu-card">
-      <h3>Pasta Bowl</h3>
-      <p>Classic white sauce pasta with herbs    </p>
-      <div class="price">₹180</div>
+    <div class="about" id="about">
+        <h2>About Us</h2>
+        <p>
+            Moon Light Restaurant and Cafe has been serving fresh,
+            homely food since 2015. We believe in simple ingredients,
+            cozy seating, and a menu that feels like home. Whether you
+            are here for a quick coffee or an evening with friends,
+            we have something for you.
+        </p>
     </div>
+    <div class="menu" id="menu">
+        <h2>Our Menu</h2>
+        <br>
 
-    <div class="menu-card">
-      <h3>Choco Brownie</h3>
-      <p>Warm brownie topped with chocolate sauce </p>
-      <div class="price">₹100</div>
+        <div class="menu-card">
+            <h3>Veg Sandwich</h3>
+            <p>Grilled with fresh vegetables</p>
+            <div class="price">₹120</div>
+        </div>
+
+        <div class="menu-card">
+            <h3>Cold Coffee</h3>
+            <p>Rich and creamy, served chilled</p>
+            <div class="price">₹90</div>
+        </div>
+
+        <div class="menu-card">
+            <h3>Pasta Bowl</h3>
+            <p>Classic white sauce pasta with herbs</p>
+            <div class="price">₹180</div>
+        </div>
+
+        <div class="menu-card">
+            <h3>Choco Brownie</h3>
+            <p>Warm brownie topped with chocolate sauce</p>
+            <div class="price">₹100</div>
+        </div>
     </div>
-  </div>
+    <div class="gallery" id="gallery">
+        <h2>Gallery</h2>
+        <br>
+        <div class="gallery-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfHpcAsbsojiDrEALxCu58mzjbqcuERZzXMWTHq-SgsQ&s=10" alt="Gallery Image 1" height="200" width="300"></div>
+        <div class="gallery-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkJ5-MwsDJCFc1kovX9rPp05nucaTTXCshjjdWcU-3XQ&s=10" alt="Gallery Image 2" height="200" width="300"></div>
+        <div class="gallery-box"><img src="https://media.istockphoto.com/id/594950774/photo/coffee-with-cake-and-tea-set-on-a-table.jpg?s=612x612&w=0&k=20&c=055nkLgBLNG76Brbr7h6T0W99RF6cJMlTdmavxFVmSc=" alt="Gallery Image 3" height="200" width="300"></div>
+        <div class="gallery-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvkM7wardW2r_FDZTgjNyLBekhP6P01SHKcju2ZdBqzA&s=10" alt="Gallery Image 4" height="200" width="300"></div>
+    </div>
+    <div class="reservation" id="reserve">
+        <h2>Reserve a Table</h2>
 
-  <!-- ================= GALLERY SECTION ================= -->
-  <div class="gallery" id="gallery">
-    <h2>Gallery</h2>
-    <br>
-    <div class="gallery-box"></div>
-    <div class="gallery-box"></div>
-    <div class="gallery-box"></div>
-    <div class="gallery-box"></div>
-  </div>
+        <form id="reservation-form">
 
-  <!-- ================= RESERVATION FORM SECTION ================= -->
-  <div class="reservation" id="reserve">
-    <h2>Reserve a Table</h2>
+            <div>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your name" required>
+            </div>
 
-    <form id="reservation-form">
+            <div>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email" required>
+            </div>
 
-      <div>
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-      </div>
+            <div>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="Enter your phone number">
+            </div>
 
-      <div>
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-      </div>
+            <div>
+                <label for="guests">Number of Guests</label>
+                <select id="guests" name="guests">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4+</option>
+                </select>
+            </div>
 
-      <div>
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-      </div>
+            <div>
+                <label for="date">Reservation Date</label>
+                <input type="date" id="date" name="date">
+            </div>
 
-      <div>
-        <label for="guests">Number of Guests</label>
-        <select id="guests" name="guests">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4+</option>
-        </select>
-      </div>
+            <div class="radio-group">
+                <label>Seating Preference:</label>
+                <label>
+                    <input type="radio" name="seating"
+                           value="indoor" checked> Indoor
+                </label>
+                <label>
+                    <input type="radio" name="seating"
+                           value="outdoor"> Outdoor
+                </label>
+            </div>
 
-      <div>
-        <label for="date">Reservation Date</label>
-        <input type="date" id="date" name="date">
-      </div>
+            <div>
+                <label for="message">Special Requests</label>
+                <textarea id="message" name="message" rows="4"
+                          placeholder="Any special requests?"></textarea>
+            </div>
 
-      <div class="radio-group">
-        <label>Seating Preference:</label>
-        <label><input type="radio" name="seating" value="indoor" checked> Indoor</label>
-        <label><input type="radio" name="seating" value="outdoor"> Outdoor</label>
-      </div>
-
-      <div>
-        <label for="message">Special Requests</label>
-        <textarea id="message" name="message" rows="4" placeholder="Any special requests?"></textarea>
-      </div>
-
-      <button type="submit">Confirm Reservation</button>
-
-    </form>
-  </div>
-
-  <!-- ================= CONTACT SECTION ================= -->
-  <div class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>123 Green Street, Vijayawada, Andhra Pradesh</p>
-    <p>Phone: 0866-1234567</p>
-    <p>Email: hello@greenleafcafe.com</p>
-  </div>
-
-  <!-- ================= FOOTER ================= -->
-  <div id="footer">
-    <p>&copy; 2026 Moon Light Restaurant and Cafe. All Rights Reserved.</p>
-  </div>
+            <button type="submit">Confirm Reservation</button>
+        </form>
+    </div>
+    <div class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>123 Green Street, Vijayawada, Andhra Pradesh</p>
+        <p>Phone: 0866-1234567</p>
+        <p>Email: hello@greenleafcafe.com</p>
+    </div>
+    <div id="footer">
+        <p>&copy; 2026 Moon Light Restaurant and Cafe. All Rights Reserved.</p>
+    </div>
 
 </body>
 </html>
